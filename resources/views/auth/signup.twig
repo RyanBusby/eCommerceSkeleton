@@ -1,0 +1,36 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="row" style="padding: 25px">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Sign up</div>
+      <div class="card-body">
+        <form action="{{ path_for('auth.signup') }}" method="post">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="you@domain.com" class="form-control{% if errors.email %} is-invalid{% endif %}" value="{{ old.email }}">
+            <div class="invalid-feedback">{{ errors.email | first }}</div>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name"  class="form-control{% if errors.name %} is-invalid{% endif %}" value="{{ old.name }}">
+            <div class="invalid-feedback">{{ errors.name | first }}</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control{% if errors.password %} is-invalid{% endif %}" onkeyup='check_pass();'/>
+            <div class="invalid-feedback">{{ errors.password | first }}</div>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control" onkeyup='check_pass();'/>
+          </div>
+          <input class="btn btn-dark" type="submit" name="submit"  value="Sign up"  id="submit" disabled/>
+          <!-- <button type="submit" id="message" class="btn btn-dark">Sign up</button> -->
+          {{ csrf.field | raw }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

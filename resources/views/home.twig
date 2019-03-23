@@ -1,0 +1,16 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="row" style="padding: 25px">
+  <div class="row">
+    {% for index, file in downloads %}
+      <div class="col">
+        {% include 'templates/partials/file.twig' with {file: file} %}
+      </div>
+      {% if (index + 1) % 3 == 0 %}
+  </div>
+  <div class="row">
+  {% endif %}
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

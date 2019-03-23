@@ -1,0 +1,6 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+    {% for download in downloads %}
+      {% include 'library/partials/track.twig' with {file: download['file'], title: download['title']} %}
+    {% endfor %}
+{% endblock %}

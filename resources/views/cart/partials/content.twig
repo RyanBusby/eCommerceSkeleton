@@ -1,0 +1,4 @@
+{% for item in basket.all %}
+  {{ item.title }} - ${{ item.price | number_format(2) }}
+</br>
+{% endfor %}

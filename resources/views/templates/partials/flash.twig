@@ -1,0 +1,18 @@
+{% if messages.getMessage('info') %}
+  <div class="alert alert-info">
+    {{ messages.getMessage('info') | first }}
+  </div>
+{% endif %}
+
+{% if messages.getMessage('warning') %}
+  <div class="alert alert-warning">
+    {{ messages.getMessage('warning') | first }}
+    <button type="submit" class="btn btn-outline-dark float-right align-self-center">Sign up</button>
+  </div>
+{% endif %}
+
+{% if messages.getMessage('error') %}
+  <div class="alert alert-danger">
+    {{ messages.getMessage('error') | first }}
+  </div>
+{% endif %}

@@ -1,0 +1,26 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="row" style="padding: 25px">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="card border-dark mb-3">
+      <div class="card-header">Change password</div>
+      <div class="card-body">
+        <form action="{{ path_for('auth.password.change') }}" method="post">
+          <div class="form-group">
+            <label for="password_old">Current Password</label>
+            <input type="password" name="password_old" id="password_old" class="form-control{% if errors.password_old %} is-invalid{% endif %}">
+            <div class="invalid-feedback">{{ errors.password_old | first }}</div>
+          </div>
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" name="password" id="password" class="form-control{% if errors.password %} is-invalid{% endif %}">
+            <div class="invalid-feedback">{{ errors.password | first }}</div>
+          </div>
+          <button type="submit" class="btn btn-dark">Change password</button>
+          {{ csrf.field | raw }}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

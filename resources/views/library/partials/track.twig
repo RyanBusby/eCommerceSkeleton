@@ -1,0 +1,6 @@
+<div class="jumbotron">
+  <h1 class="display-4">{{ title }}</h1>
+  <audio controls controlslist="nodownload" style="width: 1000px" src="{{ base_url() }}/content/tracks/{{ file }}" class="lead"></audio>
+  <hr class="my-4">
+  <a href="{{ base_url() }}/content/tracks/{{ file }}" download><button class="btn btn-primary btn-lg"><i class="fa fa-download"></i> Download</button></a>
+</div>

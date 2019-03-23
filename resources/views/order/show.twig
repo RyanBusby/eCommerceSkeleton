@@ -1,0 +1,23 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="container">
+  <div class="row" style="padding: 25px"></div>
+  <div class="row">
+    <div class="col">
+      <h3>Order #{{ order.id }}</h3>
+      <hr>
+      <div class="row">
+        <div class="col">
+          <h4>Items</h4>
+          {% for product in order.products %}
+            <a href="{{ path_for('download.get', { slug: product.slug }) }}">{{ product.title }}</a></br>
+          {% endfor %}
+        </div>
+      </div>
+      <hr>
+      <p>
+        <strong>Order total: ${{ order.total | number_format(2) }}</strong>
+      </p>
+    </div>
+  </div>
+{% endblock %}

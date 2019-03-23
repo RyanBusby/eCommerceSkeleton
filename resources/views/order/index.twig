@@ -1,0 +1,45 @@
+{% extends 'templates/app.twig' %}
+{% block content %}
+<div class="container">
+  <div class="row" style="padding: 25px">
+  </div>
+  <form action="{{ path_for('order.create') }}" method="post">
+    <div class="row">
+      <div class="col">
+        <div class="card border-dark mb-3">
+          <div class="card-header">Your Info</div>
+          <div class="card-body">
+            <p>{{ auth.user.name }}</p>
+            <p>{{ auth.user.email }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card border-dark mb-3">
+          <div class="card-header">Your Order</div>
+          <div class="card-body">
+            <p>{% include 'cart/partials/content.twig' %}</p>
+            <p>{% include 'cart/partials/summary.twig' %}</p>
+            <div id="payment"></div>
+              <button type="submit" class="btn btn-success float-right">Place Order</button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
+{% block scripts %}
+  <script src="https://js.braintreegateway.com/js/braintree-2.32.1.min.js"></script>
+  <script>
+      $.ajax({
+        url: '{{ path_for('braintree.token') }}',
+        type: 'get',
+        dataType: 'json'
+      }).success(function (data) {
+          braintree.setup(data.token, 'dropin', {
+            container: 'payment'
+          });
+      });
+  </script>
+{% endblock %}
