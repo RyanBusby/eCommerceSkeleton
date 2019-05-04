@@ -1,4 +1,6 @@
-# Online Store for Downloadable Content
+# [Online Store for Downloadable Content](https://nodal-thunder-239519.appspot.com/)
+
+[click to see sample site](https://nodal-thunder-239519.appspot.com/)
 
 Fill in sample_app.yaml with valid credentials, and drop the "sample_" prefix from the filename, and this is ready to deploy to Google App engine.
 
