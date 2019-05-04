@@ -1,5 +1,5 @@
 <div class="card text-white text-center bg-dark mb-3" style="width: 18rem;">
-  <a href="{{ path_for('download.get', {slug: file.slug}) }}"><img src="{{ base_url() }}/img/{{ file.image }}" class="card-img-top"></a>
+  <a href="{{ path_for('download.get', {slug: file.slug}) }}"><img src="{{ base_url() }}/img/download.svg" class="card-img-top"></a>
   <div class="card-body">
     <h5 class="card-title"><a href="{{ path_for('download.get', {slug: file.slug}) }}">{{ file.title }}</a></h5>
   </div>

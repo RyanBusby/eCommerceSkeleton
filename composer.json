@@ -12,6 +12,9 @@
     "autoload": {
       "psr-4": {
         "Cart\\": "app"
+      },
+    "config": {
+      "optimize-autoloader": true
       }
     }
 }

@@ -61,9 +61,9 @@ class AuthController
   public function postSignUp(Request $request, Response $response, Messages $messages)
   {
     $validation = $this->validator->validate($request, [
-      'email' => v::noWhiteSpace()->notEmpty()->email()->EmailAvailable(),
+      'email' => v::noWhitespace()->notEmpty()->email()->EmailAvailable(),
       'name' => v::notEmpty()->alpha(),
-      'password' => v::noWhiteSpace()->notEmpty()
+      'password' => v::noWhitespace()->notEmpty()
     ]);
 
     if ($validation->failed()) {

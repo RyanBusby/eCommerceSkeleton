@@ -1,0 +1,22 @@
+runtime: php72
+
+env_variables:
+  BT_merchantId: ''
+  BT_publicKey: ''
+  BT_privateKey: ''
+  webstore_host: ''
+  webstore_database: ''
+  webstore_username: ''
+  webstore_password: ''
+
+runtime_config:
+  document_root: public
+
+handlers:
+- url: /content
+  static_dir: public/content
+- url : /img
+  static_dir: public/img
+
+beta_settings:
+  cloud_sql_instances: ''

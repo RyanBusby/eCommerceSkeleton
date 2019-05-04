@@ -1,25 +1,10 @@
-required packages:
+# Online Store for Downloadable Content
 
-$ composer require slim/slim "^3.0"
+Fill in sample_app.yaml with valid credentials, and drop the "sample_" prefix from the filename, and this is ready to deploy to Google App engine.
 
-$ composer require slim/twig-view
+Create relations in a postgresql database from createtables.txt
 
-$ composer require php-di/slim-bridge 1.0.2
+Insert content into products table, file and sample file are the src for the content
 
-$ composer require illuminate/database
-
-$ composer require respect/validation
-
-$ composer require braintree/braintree_php
-
-$ composer require slim/csrf
-
-$ composer require slim/flash
-
-$ composer dump-autoload -o
-
-todos:
-
-edit .htaccess to redirect /content/* routes
-
-have an option for if user forgets password
+Future Development:
+Password resetting and forgot password options.

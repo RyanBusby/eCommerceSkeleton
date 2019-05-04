@@ -21,14 +21,15 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
   'driver' => 'pgsql',
-  'host' => 'localhost',
-  'database' => '',
-  'username' => '',
-  'password' => '',
+  'host' => getenv('webstore_host'),
+  'database' => getenv('webstore_database'),
+  'username' => getenv('webstore_username'),
+  'password' => getenv('webstore_password'),
   'charset' => 'utf8',
   'collation' => 'utf8_unicode_ci',
   'prefix' => ''
 ]);
+
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();

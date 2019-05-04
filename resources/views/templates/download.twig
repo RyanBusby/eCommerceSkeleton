@@ -5,11 +5,11 @@
     <div class="row">
       <div class="col">
         <div class="card text-white text-center bg-dark mb-3" style="width: 18rem;">
-          <img src="{{ base_url() }}/img/{{ file.image }}" class="card-img-top">
+          <img src="{{ base_url() }}/img/download.svg" class="card-img-top">
           <div class="card-body">
             <h3 class="card-title">{{ file.title }}</h3>
               <p class="card-text">{{  file.description }}</p>
-              <audio id="player" src="{{ base_url() }}/content/samples/{{ file.samplefile }}"></audio>
+              <audio id="player" src="{{ base_url() }}/content/{{  file.samplefile }}"></audio>
               <button onclick="document.getElementById('player').play()"><i class="fas fa-play"></i></button>
               <button onclick="document.getElementById('player').pause()"><i class="fas fa-pause"></i></button>
               <p></p>
