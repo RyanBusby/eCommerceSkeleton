@@ -17,6 +17,8 @@ handlers:
   static_dir: public/content
 - url : /img
   static_dir: public/img
+- url: /js
+  static_dir: public/js
 
 beta_settings:
   cloud_sql_instances: '<Instance connection name>'
