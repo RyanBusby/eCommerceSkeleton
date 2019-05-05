@@ -1,32 +1,32 @@
-sql = """CREATE TABLE orders ('id SERIAL PRIMARY KEY',
-    'hash VARCHAR(255) NOT NULL',
-    'total FLOAT NOT NULL',
-    'paid SMALLINT NOT NULL',
-    'created_at TIMESTAMP',
-    'updated_at TIMESTAMP',
-    'user_id INTEGER NOT NULL')
+sql = """CREATE TABLE orders (id SERIAL PRIMARY KEY,
+    hash VARCHAR(255) NOT NULL,
+    total FLOAT NOT NULL,
+    paid SMALLINT NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP,
+    user_id INTEGER NOT NULL)
 ;
-CREATE TABLE orders_products ('id SERIAL PRIMARY KEY',
-    'order_id INTEGER NOT NULL',
-    'product_id INTEGER NOT NULL')
+CREATE TABLE orders_products (id SERIAL PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL)
 ;
-CREATE TABLE orders_products ('id SERIAL PRIMARY KEY',
-    'order_id INTEGER NOT NULL',
-    'product_id INTEGER NOT NULL')
+CREATE TABLE orders_products (id SERIAL PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL)
 ;
-CREATE TABLE payments ('id SERIAL PRIMARY KEY',
-    'order_id INTEGER NOT NULL',
-    'failed SMALLINT NOT NULL',
-    'transaction_id VARCHAR(255)',
-    'created_at TIMESTAMP',
-    'updated_at TIMESTAMP')
+CREATE TABLE payments (id SERIAL PRIMARY KEY,
+    order_id INTEGER NOT NULL,
+    failed SMALLINT NOT NULL,
+    transaction_id VARCHAR(255),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP)
 ;
-CREATE TABLE users ('id SERIAL PRIMARY KEY',
-    'name VARCHAR(255)',
-    'email VARCHAR(255) NOT NULL',
-    'password VARCHAR(255) NOT NULL',
-    'created_at TIMESTAMP',
-    'updated_at TIMESTAMP')
+CREATE TABLE users (id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP)
 ;"""
 
 orders_cols = [
